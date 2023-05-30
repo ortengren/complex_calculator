@@ -2,7 +2,7 @@ import unittest
 import functions
 
 
-class TestAdd(unittest.TestCase):
+class TestFunctions(unittest.TestCase):
 
     def test_add_0(self):
         expected = (0, 0)
@@ -21,7 +21,17 @@ class TestAdd(unittest.TestCase):
 
 
 class TestMultiply(unittest.TestCase):
-    def multiply_i_i(self):
+
+    def test_multiply_i_i(self):
         expected = (-1, 0)
         actual = functions.multiply((0, 1), (0, 1))
         self.assertEquals(expected, actual)
+
+    def test_multiply_basic(self):
+        actual = functions.multiply((1, 0), (0, 1))
+        expected = (0, 1)
+        self.assertEquals(expected, actual)
+
+
+if __name__ == '__main__':
+    unittest.main()
